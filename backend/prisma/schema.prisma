@@ -25,7 +25,7 @@ model User {
   uploads               Uploads[]
 }
 
-model uploads {
+model Uploads {
   id            String      @id       @default(uuid())
   videoUrl      String
   thumbnail     String
