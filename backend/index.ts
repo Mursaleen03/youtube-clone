@@ -36,10 +36,10 @@ const signinSchema = z.object({
   password: z.string(),
 });
 
-const uploadSchema = {
+const uploadSchema = z.object({
   videoUrl: z.url(),
   thumbnail: z.url(),
-};
+});
 
 // Auth
 
