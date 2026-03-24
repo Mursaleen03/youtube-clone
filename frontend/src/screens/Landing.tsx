@@ -1,3 +1,4 @@
+import { Appbar } from "@/components/Appbar";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -14,16 +15,19 @@ export function Landing() {
   }, []);
 
   return (
-    <div style={{ display: "flex", padding: 50 }}>
-      {videos.map((video) => (
-        <VideoCard
-          href={`/watch?${video.id}`}
-          imageUrl={video.thumbnail}
-          title={video.title}
-          channelImage={video.user.profilePicture}
-          channelName={video.user.channelName}
-        />
-      ))}
+    <div>
+      <div style={{ display: "flex", padding: 50 }}>
+        {videos.map((video: any) => (
+          <VideoCard
+            key={video.id}
+            href={`/watch?${video.id}`}
+            imageUrl={video.thumbnail}
+            title={video.title}
+            channelImage={video.user.profilePicture}
+            channelName={video.user.channelName}
+          />
+        ))}
+      </div>
     </div>
   );
 }
@@ -44,7 +48,10 @@ function VideoCard({
   href,
 }: IVideoCard) {
   return (
-    <div style={{ borderRadius: 10, margin: 20 }} onClick={()=> window.location = href}>
+    <div
+      style={{ borderRadius: 10, margin: 20 }}
+      onClick={() => (window.location = href)}
+    >
       <img
         src={imageUrl}
         style={{ display: "block", width: "100%", borderRadius: 10 }}

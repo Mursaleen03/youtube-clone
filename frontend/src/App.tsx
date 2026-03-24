@@ -4,16 +4,22 @@ import { VideoPage } from "./screens/VideoPage";
 import { Signin } from "./screens/Signin";
 import { Signup } from "./screens/Signup";
 import { Landing } from "./screens/Landing";
+import { Upload } from "./screens/Upload";
+import { Appbar } from "./components/Appbar";
 export function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/watch" element={<VideoPage />} />
-        <Route path="/signin" element={<Signin />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/" element={<Landing />} />
-      </Routes>
-    </BrowserRouter>
+    <div>
+      <Appbar />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/watch" element={<VideoPage />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/upload" element={<Upload />} />
+          <Route path="/" element={<Landing />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
